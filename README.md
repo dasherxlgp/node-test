@@ -1,2 +1,2 @@
 # node-test
-projeto pra testar o noe
+projeto pra testar o node
