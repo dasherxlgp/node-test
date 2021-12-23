@@ -1,8 +1,23 @@
-import fetch from 'node-fetch';
+const frutas = ["maça", "banana", "pera", 3565, {
+    nome: "joao",
+    idade: 34
+}];
+const carros = ["gol", "vectraa", "civic", "uno"];
 
-const getCep = async (cep) => {
-    const address = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    console.log(address)
+const showItens = (arr = []) => {
+    arr.map((item) => {
+        switch (typeof (item)) {
+            case "object":
+                return console.log(item.nome)
+            case "number":
+                return console.log("batata")
+            default:
+                console.log(item)
+                break;
+        }
+    })
 }
 
-getCep("53430315")
+showItens([...frutas, ...carros]);
+
+
